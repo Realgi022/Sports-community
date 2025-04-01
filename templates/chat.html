@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Football Community</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <a href="{{ url_for('home') }}">
+                            <img src="{{ url_for('static', filename='footballforum.jpg') }}" 
+                            alt="Football Forum Logo" 
+                            class="logo">
+                        </a>
+                    </td> 
+                    <td>
+                        <h2><a href="{{ url_for('chat') }}">Chat</a></h2>
+                    </td>
+                    <td>
+                        <h2><a href="{{ url_for('forum') }}">Forum</a></h2>
+                    </td>
+                    <td>
+                        <h2><a href="{{ url_for('organize_events') }}">Organize Events</a></h2>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <section class="chat-container">
+        <h2>Chat</h2>
+        <button id="clear-chat-btn">❌ Clear Chat</button>
+        <div class="chat-box" id="chat-box"></div>
+
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </section>
+
+    <script>
+        sessionStorage.setItem("currentUser", "{{ username }}");
+    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>

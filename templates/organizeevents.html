@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Organize Events - The Football World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <a href="{{ url_for('home') }}">
+                            <img src="{{ url_for('static', filename='footballforum.jpg') }}" 
+                            alt="Football Forum Logo" 
+                            class="logo">
+                        </a>
+                    </td>                    
+                    <td><h2><a href="{{ url_for('chat') }}">Chat</a></h2></td>
+                    <td><h2><a href="{{ url_for('forum') }}">Forum</a></h2></td>
+                    <td><h2><a href="{{ url_for('organize_events') }}">Organize Events</a></h2></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <section class="main-container">
+        <h1>Organize Events</h1>
+        <p>Plan and manage football events with the community!</p>
+
+        <div class="event-form">
+            <h2>Create a New Event</h2>
+            <form id="eventForm">
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" name="eventName" required>
+
+                <label for="eventDate">Date:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventTime">Time:</label>
+                <input type="time" id="eventTime" name="eventTime" required>
+
+                <label for="eventLocation">Location:</label>
+                <input type="text" id="eventLocation" name="eventLocation" required>
+
+                <label for="eventDescription">Description:</label>
+                <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+
+                <button type="submit">Create Event</button>
+            </form>
+        </div>
+
+        <div class="event-list">
+            <h2>Upcoming Events</h2>
+            <ul id="events"></ul>
+            <button id="clearEventsBtn">Clear Events</button>
+        </div>
+        
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Football World</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <table>
+                <tr>
+                    <td>
+                        <a href="{{ url_for('home') }}">
+                            <img src="{{ url_for('static', filename='footballforum.jpg') }}" 
+                            alt="Football Forum Logo" 
+                            class="logo">
+                        </a>
+                    </td> 
+                    <td><h2><a href="{{ url_for('chat') }}">Chat</a></h2></td>
+                    <td><h2><a href="{{ url_for('forum') }}">Forum</a></h2></td>
+                    <td><h2><a href="{{ url_for('organize_events') }}">Organize Events</a></h2></td>
+                    <td>
+                        <form action="{{ url_for('logout') }}" method="POST">
+                            <button type="submit" class="logout-button">Logout</button>
+                        </form>
+                        
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <section class="main-container">
+        <h1>The Football Community</h1>
+
+        <h1>Announcements</h1>
+        <div class="announcement-box" id="announcementBox">
+        </div>
+        
+        <div class="announcement-form">
+            <input type="text" id="announcementInput" placeholder="Write your announcement here..." />
+            <button id="addAnnouncementBtn">➕ Add Announcement</button>
+            <button id="clearAnnouncementsBtn">❌ Clear Announcements</button>
+        </div>
+        
+    </section>
+
+    <footer>
+        <h2>About Us</h2>
+        <p>
+            The Football Community is a platform dedicated to bringing football enthusiasts together.
+            Whether you're a player, a fan, or just someone who loves the sport, our goal is to create a space where you
+            can connect, discuss, and organize events.
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

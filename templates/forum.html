@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Football Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                        <a href="{{ url_for('home') }}">
+                            <img src="{{ url_for('static', filename='footballforum.jpg') }}" 
+                            alt="Football Forum Logo" 
+                            class="logo">
+                        </a>
+                    </td>                  
+                    <td><h2><a href="{{ url_for('chat') }}">Chat</a></h2></td>
+                    <td><h2><a href="{{ url_for('forum') }}">Forum</a></h2></td>
+                    <td><h2><a href="{{ url_for('organize_events') }}">Organize Events</a></h2></td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <h1>Football News & Match Highlights</h1>
+
+        <section class="news-section">
+            <article class="news-item">
+                <h2>Real Madrid Secures Victory Over Barcelona</h2>
+                <p>In a thrilling El Clasico, Real Madrid secured a 3-2 victory over Barcelona. Vinicius Jr. was the star with a last-minute goal.</p>
+                <a href="https://www.espn.com/soccer/real-madrid-vs-barcelona/highlights" target="_blank">Watch Highlights</a>
+            </article>
+
+            <article class="news-item">
+                <h2>Manchester City Clinches Premier League Title</h2>
+                <p>Manchester City wins the Premier League after a dominant 4-1 victory over Arsenal. Kevin De Bruyne starred with two stunning goals.</p>
+                <a href="https://www.premierleague.com/match-highlights" target="_blank">Watch Highlights</a>
+            </article>
+
+            <article class="news-item">
+                <h2>Lionel Messi Breaks Another Record</h2>
+                <p>Lionel Messi has become the all-time top scorer in international football with his latest goal for Argentina.</p>
+                <a href="https://www.fifa.com/highlights" target="_blank">Watch Highlights</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Football World. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
